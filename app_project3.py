@@ -5,15 +5,19 @@ from PIL import Image
 import io
 import base64
 import streamlit.components.v1 as components
+
 from urllib.parse import urljoin
 
 # Nouveau chemin d'image
 image_path = './google_news_logo_icon_159341.png'
 
 # Charger l'image
-with open(image_path, "rb") as file:
-    image_base64 = base64.b64encode(file.read()).decode("utf-8")
-
+try:
+    with open(image_path, "rb") as file:
+        image_base64 = base64.b64encode(file.read()).decode("utf-8")
+except FileNotFoundError:
+    st.error(f"Image file not found at '{image_path}'. Please check the file path.")
+    st.stop()  # This will stop the execution of the script, so it won't proceed further if the image is not found.
 
 # Fonction pour récupérer les articles depuis l'API News
 def get_news_from_api():
