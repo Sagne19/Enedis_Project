@@ -6,7 +6,6 @@ import io
 import base64
 import streamlit.components.v1 as components
 from urllib.parse import urljoin
-from bs4 import BeautifulSoup
 
 # Nouveau chemin d'image
 image_path = './google_news_logo_icon_159341.png'
