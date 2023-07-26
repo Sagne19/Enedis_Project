@@ -136,7 +136,7 @@ def main():
         "Tableau de bord": page_lien_tableau
     }
 
-    st.sidebar.title("Navigation")
+    st.sidebar.title("Menu")
     choix_page = st.sidebar.selectbox("Choisissez une page", tuple(pages.keys()))
 
     # Appeler la fonction correspondant à la page sélectionnée
